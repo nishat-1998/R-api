@@ -1,0 +1,17 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "Nishat",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "http-server": "^14.0.0",
+    "mongoose": "^6.1.3"
+  }
+}
