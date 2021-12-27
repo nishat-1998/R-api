@@ -7,20 +7,20 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name":"IPhone 11",
-  "price":"6499",
-  "available":"8" 
+  "name":"IPhone 10 max ",
+  "price":"4500",
+  "available":"10" 
 }
 
 ### get a product by id
-GET http://localhost:3000/products/id 
+GET http://localhost:3000/products/61c98919907696ba20d8485e
 
 ### Update a product by id
 PATCH http://localhost:3000/products/id
 
 
 ### Delete a product by id
-DELETE http://localhost:3000/products/id
+DELETE http://localhost:3000/products/61c9a06445bd3c91f5f8dad7
 ###
 
 GET http://localhost:3000/abc
