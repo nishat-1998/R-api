@@ -7,20 +7,26 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name":"IPhone 10 max ",
-  "price":"4500",
+  "name":"I Mac Pro ",
+   "price":"5000",
   "available":"10" 
 }
 
 ### get a product by id
-GET http://localhost:3000/products/61c98919907696ba20d8485e
+GET http://localhost:3000/products/61cbefa8ea08aa9d6b3e8359
 
 ### Update a product by id
-PATCH http://localhost:3000/products/id
+PATCH http://localhost:3000/products/61c95b3c232d74122aefaa78
+Content-Type: application/json
+
+{
+ 
+  "price":9999
+}
 
 
 ### Delete a product by id
-DELETE http://localhost:3000/products/61c9a06445bd3c91f5f8dad7
+DELETE http://localhost:3000/products/61d022aad1dc862048ce1d1g
 ###
 
 GET http://localhost:3000/abc

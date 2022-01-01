@@ -1,22 +1,16 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const createError =require('http-errors');
+const dotenv =require('dotenv').config();
+
 
 
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
-mongoose.connect('mongodb+srv://cluster0.98xqu.mongodb.net/',
-{
-dbName:'Restful_api',
-user:'Rest-Api',
-pass:'api1234',
-useNewUrlParser: true,
-useNewUrlParser:true
-}
-).then(()=>{
-    console.log("Mongodb connected..");
-});
+// Initialize DB
+require('./initDb')();
 
 app.all('/test', (req,res) =>{
     // console.log(req.query);
@@ -35,9 +29,10 @@ app.use('/products', ProductRoute);
 
 app.use((req,res,next) => {
    
-      const err = new error("Not Found 404!")
-      err.status =404
-      next(err)
+    //  const err = new error("Not Found 404!")
+//err.status =404
+//next(err)
+next(createError(404, 'Not Found'));
 });
 
 //Error handle
@@ -50,7 +45,9 @@ res.send({
     }
 })
 });
+const PORT =process.env.PORT ||3000;
 
-app.listen(3000,() => {
-    console.log('server started on port 3000..')
+
+app.listen(PORT,() => {
+    console.log('server started on port '+ PORT +'...');
 });
